@@ -8,6 +8,13 @@ module.exports = function toReadable (number) {
 
     if (length === 1) {
         return result = numbers[n];
+    } else if (length === 2 && numToStr[0] === '1') {
+        return result = tenToNineteen[numToStr[1]];
+    } else if (length === 2 &&  numToStr[0] !== '1' && numToStr[1] === '0') {
+        return result = dozens[numToStr[0] - 2];
+    } else if (length === 2 &&  numToStr[0] !== '1' && numToStr[1] !== '0') {
+        return result = `${dozens[numToStr[0] - 2]} ${numbers[numToStr[1]]}`;
     }
 }
+
 
